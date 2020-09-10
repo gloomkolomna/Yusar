@@ -31,3 +31,5 @@ Bin
 .vs
 .idea
 obj
+Bin/Debug
+Bin/Release
