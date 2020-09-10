@@ -1,0 +1,13 @@
+G:\WORK\ЮСАР\Yusar\Bin\net48\NUnit3.TestAdapter.dll
+G:\WORK\ЮСАР\Yusar\Bin\net48\NUnit3.TestAdapter.pdb
+G:\WORK\ЮСАР\Yusar\Bin\net48\nunit.engine.dll
+G:\WORK\ЮСАР\Yusar\Bin\net48\nunit.engine.api.dll
+G:\WORK\ЮСАР\Yusar\Bin\net48\Yusar.Tests.dll
+G:\WORK\ЮСАР\Yusar\Bin\net48\Yusar.Tests.pdb
+G:\WORK\ЮСАР\Yusar\Yusar.Tests\obj\Debug\net48\Yusar.Tests.csprojAssemblyReference.cache
+G:\WORK\ЮСАР\Yusar\Yusar.Tests\obj\Debug\net48\Yusar.Tests.AssemblyInfoInputs.cache
+G:\WORK\ЮСАР\Yusar\Yusar.Tests\obj\Debug\net48\Yusar.Tests.AssemblyInfo.cs
+G:\WORK\ЮСАР\Yusar\Yusar.Tests\obj\Debug\net48\Yusar.Tests.csproj.CoreCompileInputs.cache
+G:\WORK\ЮСАР\Yusar\Yusar.Tests\obj\Debug\net48\Yusar.Tests.csproj.CopyComplete
+G:\WORK\ЮСАР\Yusar\Yusar.Tests\obj\Debug\net48\Yusar.Tests.dll
+G:\WORK\ЮСАР\Yusar\Yusar.Tests\obj\Debug\net48\Yusar.Tests.pdb

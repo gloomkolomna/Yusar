@@ -1,0 +1,12 @@
+G:\WORK\ЮСАР\Yusar\Yusar.Core\bin\Debug\net48\Yusar.Core.dll
+G:\WORK\ЮСАР\Yusar\Yusar.Core\obj\Debug\net48\Yusar.Core.AssemblyInfoInputs.cache
+G:\WORK\ЮСАР\Yusar\Yusar.Core\obj\Debug\net48\Yusar.Core.AssemblyInfo.cs
+G:\WORK\ЮСАР\Yusar\Yusar.Core\bin\Debug\net48\Yusar.Core.pdb
+G:\WORK\ЮСАР\Yusar\Yusar.Core\bin\Debug\net48\LiteDB.dll
+G:\WORK\ЮСАР\Yusar\Yusar.Core\obj\Debug\net48\Yusar.Core.csprojAssemblyReference.cache
+G:\WORK\ЮСАР\Yusar\Yusar.Core\obj\Debug\net48\Yusar.Core.csproj.CoreCompileInputs.cache
+G:\WORK\ЮСАР\Yusar\Yusar.Core\obj\Debug\net48\Yusar.Core.csproj.CopyComplete
+G:\WORK\ЮСАР\Yusar\Yusar.Core\obj\Debug\net48\Yusar.Core.dll
+G:\WORK\ЮСАР\Yusar\Yusar.Core\obj\Debug\net48\Yusar.Core.pdb
+G:\WORK\ЮСАР\Yusar\Bin\net48\Yusar.Core.dll
+G:\WORK\ЮСАР\Yusar\Bin\net48\Yusar.Core.pdb

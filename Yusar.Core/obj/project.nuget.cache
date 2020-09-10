@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "EcMIoOdhibbvY0SbebY7p6U4NFFeapQ6mUnLMQv5FZNYRqhjyzb7ytQHz1t++ch+9WJ6GV7mMg15zB46eKCMRA==",
+  "success": true,
+  "projectFilePath": "G:\\WORK\\ЮСАР\\Yusar\\Yusar.Core\\Yusar.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gloom\\.nuget\\packages\\litedb\\5.0.9\\litedb.5.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}

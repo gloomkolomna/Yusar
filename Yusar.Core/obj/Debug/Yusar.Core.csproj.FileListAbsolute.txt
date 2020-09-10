@@ -1,0 +1,7 @@
+G:\WORK\ЮСАР\Yusar\Bin\Debud\Yusar.Core.dll
+G:\WORK\ЮСАР\Yusar\Bin\Debud\Yusar.Core.pdb
+G:\WORK\ЮСАР\Yusar\Yusar.Core\obj\Debug\Yusar.Core.csprojAssemblyReference.cache
+G:\WORK\ЮСАР\Yusar\Yusar.Core\obj\Debug\Yusar.Core.csproj.CoreCompileInputs.cache
+G:\WORK\ЮСАР\Yusar\Yusar.Core\obj\Debug\Yusar.Core.csproj.CopyComplete
+G:\WORK\ЮСАР\Yusar\Yusar.Core\obj\Debug\Yusar.Core.dll
+G:\WORK\ЮСАР\Yusar\Yusar.Core\obj\Debug\Yusar.Core.pdb

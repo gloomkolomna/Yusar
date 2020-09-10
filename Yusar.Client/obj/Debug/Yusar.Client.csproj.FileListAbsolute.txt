@@ -1,0 +1,13 @@
+G:\WORK\ЮСАР\Yusar\Bin\Debud\Yusar.Client.exe.config
+G:\WORK\ЮСАР\Yusar\Bin\Debud\Yusar.Client.exe
+G:\WORK\ЮСАР\Yusar\Bin\Debud\Yusar.Client.pdb
+G:\WORK\ЮСАР\Yusar\Yusar.Client\obj\Debug\Yusar.Client.csprojAssemblyReference.cache
+G:\WORK\ЮСАР\Yusar\Yusar.Client\obj\Debug\MainWindow.g.cs
+G:\WORK\ЮСАР\Yusar\Yusar.Client\obj\Debug\App.g.cs
+G:\WORK\ЮСАР\Yusar\Yusar.Client\obj\Debug\Yusar.Client_MarkupCompile.cache
+G:\WORK\ЮСАР\Yusar\Yusar.Client\obj\Debug\Yusar.Client_MarkupCompile.lref
+G:\WORK\ЮСАР\Yusar\Yusar.Client\obj\Debug\MainWindow.baml
+G:\WORK\ЮСАР\Yusar\Yusar.Client\obj\Debug\Yusar.Client.g.resources
+G:\WORK\ЮСАР\Yusar\Yusar.Client\obj\Debug\Yusar.Client.csproj.CoreCompileInputs.cache
+G:\WORK\ЮСАР\Yusar\Yusar.Client\obj\Debug\Yusar.Client.exe
+G:\WORK\ЮСАР\Yusar\Yusar.Client\obj\Debug\Yusar.Client.pdb
