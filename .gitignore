@@ -27,9 +27,7 @@ build-result.log
 
 # Directories to ignore
 # ---------------------
-Bin
 .vs
 .idea
 obj
-Bin/Debug
-Bin/Release
+Bin/
