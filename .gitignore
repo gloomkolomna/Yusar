@@ -1,0 +1,33 @@
+# This file is used to ignore files which are generated
+# ----------------------------------------------------------------------------
+
+# Visual Studio generated files
+*.ib_pdb_index
+*.idb
+*.ilk
+*.sln
+*.suo
+*.vcproj
+*vcproj.*
+*.user
+*.ncb
+*.VC.db
+*.dcvr
+*.settings
+*.VC.db
+*.cache
+*.opendb
+*.ipch
+*.ldb
+*.DotSettings
+*.psess
+*.vspx
+*.InstallLog
+build-result.log
+
+# Directories to ignore
+# ---------------------
+Bin
+.vs
+.idea
+obj
