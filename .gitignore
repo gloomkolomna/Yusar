@@ -30,4 +30,4 @@ build-result.log
 .vs
 .idea
 obj
-Bin/
+Bin/Debug/
