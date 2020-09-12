@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETFRAMEWORK;NET48
 G:\WORK\ЮСАР\Yusar\Yusar.Client\App.xaml
-11151548125
+4507061077
 
-61281173968
+19-980472893
 1392018746434
-MainWindow.xaml;
+MainWindow.xaml;Views\Controls\LongOperationView.xaml;Views\MainView.xaml;Views\Styles.xaml;
 
 False
 

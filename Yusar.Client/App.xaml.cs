@@ -6,6 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
+using Yusar.Client.ViewModels;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Yusar.Client
 {
@@ -27,20 +29,15 @@ namespace Yusar.Client
 
             try
             {
-                //var dialogService = _dependencyResolver.ServiceProvider.GetService(typeof(IDialogService)) as DialogService;
-                //var mainVm = _dependencyResolver.ServiceProvider.GetService<MainVm>();
-                //var mainWindow = new MainWindow();
+                var mainVm = _dependencyResolver.ServiceProvider.GetService<MainVm>();
+                var mainWindow = _dependencyResolver.ServiceProvider.GetService<MainWindow>();
 
-                //dialogService?.SetContext(mainVm.GetContext());
-                //dialogService?.SetWindow(mainWindow);
-
-                //mainVm.Preparation();
-                //mainWindow.DataContext = mainVm;
-                //mainWindow.Show();
+                mainWindow.DataContext = mainVm;
+                mainWindow.Show();
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("Standard Migration Client", "Error", ex.Message, TaskDialogIcon.Error);
+                MessageBox.Show(ex.Message, "Wpf", MessageBoxButton.OK, MessageBoxImage.Error);
                 Environment.Exit(0);
             }
         }

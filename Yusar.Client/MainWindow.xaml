@@ -3,10 +3,20 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Yusar.Client"
+        xmlns:local="clr-namespace:Yusar.Client" xmlns:controls="clr-namespace:Yusar.Client.Views.Controls" xmlns:view="clr-namespace:Yusar.Client.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <AdornerDecorator>
+        <Border BorderBrush="#FF666666" BorderThickness="0,1,0,0">
+            <Grid>
+                <Border IsEnabled="{Binding LongOperationInProgress, Converter={StaticResource BoolToInvertedBoolConverter}}">
+                    <view:MainView />
+                </Border>
+                <controls:LongOperationView />
 
-    </Grid>
+            </Grid>
+        </Border>
+
+
+    </AdornerDecorator>
 </Window>

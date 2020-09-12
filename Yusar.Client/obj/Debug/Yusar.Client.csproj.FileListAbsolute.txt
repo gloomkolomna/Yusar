@@ -13,3 +13,9 @@ G:\WORK\ЮСАР\Yusar\Yusar.Client\obj\Debug\Yusar.Client.exe
 G:\WORK\ЮСАР\Yusar\Yusar.Client\obj\Debug\Yusar.Client.pdb
 G:\WORK\ЮСАР\Yusar\Yusar.Client\obj\Debug\Yusar.Client.exe.config
 G:\WORK\ЮСАР\Yusar\Yusar.Client\obj\Debug\Yusar.Client.csproj.CopyComplete
+G:\WORK\ЮСАР\Yusar\Yusar.Client\obj\Debug\Views\Controls\LongOperationView.g.cs
+G:\WORK\ЮСАР\Yusar\Yusar.Client\obj\Debug\GeneratedInternalTypeHelper.g.cs
+G:\WORK\ЮСАР\Yusar\Yusar.Client\obj\Debug\Views\MainView.g.cs
+G:\WORK\ЮСАР\Yusar\Yusar.Client\obj\Debug\Views\Controls\LongOperationView.baml
+G:\WORK\ЮСАР\Yusar\Yusar.Client\obj\Debug\Views\MainView.baml
+G:\WORK\ЮСАР\Yusar\Yusar.Client\obj\Debug\Views\Styles.baml
