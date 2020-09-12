@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using Yusar.Core.Entities;
+using System.Threading.Tasks;
 
 namespace Yusar.Core
 {
@@ -25,6 +26,11 @@ namespace Yusar.Core
             }
         }
 
+        public async Task<bool> CreateAsync(T item)
+        {
+            return await Task.Run(() => Create(item));
+        }
+
         public bool Delete(int id)
         {
             using (var db = new LiteDatabase(DbFile))
@@ -33,6 +39,11 @@ namespace Yusar.Core
                 var value = new BsonValue(id);
                 return items.Delete(value);
             }
+        }
+
+        public async Task<bool> DeleteAsync(int id)
+        {
+            return await Task.Run(() => Delete(id));
         }
 
         public IEnumerable<T> GetAll()
@@ -46,6 +57,11 @@ namespace Yusar.Core
             return resultItems;
         }
 
+        public async Task<IEnumerable<T>> GetAllAsync()
+        {
+            return await Task.Run(GetAll);
+        }
+
         public T GetById(int id)
         {
             using (var db = new LiteDatabase(DbFile))
@@ -54,6 +70,11 @@ namespace Yusar.Core
                 var value = new BsonValue(id);
                 return items.FindById(value);
             }
+        }
+
+        public async Task<T> GetByIdAsync(int id)
+        {
+            return await Task.Run(() => GetById(id));
         }
 
         public bool Update(T item)
@@ -67,6 +88,11 @@ namespace Yusar.Core
 
                 return result;
             }
+        }
+
+        public async Task<bool> UpdateAsync(T item)
+        {
+            return await Task.Run(() => Update(item));
         }
     }
 }

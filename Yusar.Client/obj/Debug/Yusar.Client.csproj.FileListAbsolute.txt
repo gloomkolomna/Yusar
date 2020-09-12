@@ -11,3 +11,5 @@ G:\WORK\ЮСАР\Yusar\Yusar.Client\obj\Debug\Yusar.Client.g.resources
 G:\WORK\ЮСАР\Yusar\Yusar.Client\obj\Debug\Yusar.Client.csproj.CoreCompileInputs.cache
 G:\WORK\ЮСАР\Yusar\Yusar.Client\obj\Debug\Yusar.Client.exe
 G:\WORK\ЮСАР\Yusar\Yusar.Client\obj\Debug\Yusar.Client.pdb
+G:\WORK\ЮСАР\Yusar\Yusar.Client\obj\Debug\Yusar.Client.exe.config
+G:\WORK\ЮСАР\Yusar\Yusar.Client\obj\Debug\Yusar.Client.csproj.CopyComplete
