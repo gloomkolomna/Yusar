@@ -19,7 +19,6 @@ namespace Yusar.Client.ViewModels
         SynchronizationContext GetContext();
         ObservableCollection<SimpleStringModel> SimpleStringItems { get; set; }
         Task Init();
-        Task AddItem();
         SimpleStringModel SelectedString { get; set; }
     }
 
@@ -34,8 +33,9 @@ namespace Yusar.Client.ViewModels
         private string _longOperationText;
         private IBaseVm _selectedView;
         private ObservableCollection<SimpleStringModel> _simpleStringItems;
-        private IAsyncCommand _addItemCommand;
+        private IAsyncCommand _addOrUpdateItemCommand;
         private SimpleStringModel _selectedString;
+        private IAsyncCommand _deleteItemCommand;
 
         public MainVm(ILongOperationService longOperationService, IDialogService dialogService, IMapper mapper, IYusarRepository<SimpleString> repository)
         {
@@ -147,11 +147,19 @@ namespace Yusar.Client.ViewModels
             }
         }
 
-        public IAsyncCommand AddItemCommand
+        public IAsyncCommand AddOrUpdateItemCommand
         {
             get
             {
-                return _addItemCommand ?? (_addItemCommand = new AsyncCommand(async param => await AddItem()));
+                return _addOrUpdateItemCommand ?? (_addOrUpdateItemCommand = new AsyncCommand(async param => await AddOrUpdateItemAsync()));
+            }
+        }
+
+        public IAsyncCommand DeleteItemCommand
+        {
+            get
+            {
+                return _deleteItemCommand ?? (_deleteItemCommand = new AsyncCommand(async param => await DeleteItemAsync()));
             }
         }
 
@@ -165,16 +173,52 @@ namespace Yusar.Client.ViewModels
             }
         }
 
-        public async Task AddItem()
+        private async Task DeleteItemAsync()
         {
-            var simpleString = _mapper.Map<SimpleString>(SelectedString);
-            var retSimpleString = await _repository.CreateAsync(simpleString);
-
-            SynchronizationContext.Post(post =>
+            if (SelectedString != null)
             {
-                SimpleStringItems.Remove(SelectedString);
-                SimpleStringItems.Add(_mapper.Map<SimpleStringModel>(retSimpleString));
-            }, null);
+                var res = await _repository.DeleteAsync(SelectedString.Id);
+                if(res)
+                {
+                    SynchronizationContext.Post(post =>
+                    {
+                        SimpleStringItems.Remove(SelectedString);
+                        SimpleStringItems = new ObservableCollection<SimpleStringModel>(SimpleStringItems);
+                    }, null);
+                }
+            }
+        }
+
+        private async Task AddOrUpdateItemAsync()
+        {
+            if (SelectedString != null)
+            {
+                var simpleString = _mapper.Map<SimpleString>(SelectedString);
+                if (SelectedString.Id == 0)
+                {
+                    var retSimpleString = await _repository.CreateAsync(simpleString);
+                    var simpleStringModel = _mapper.Map<SimpleStringModel>(retSimpleString);
+                    SynchronizationContext.Post(post =>
+                    {
+                        SimpleStringItems.Remove(SelectedString);
+                        SimpleStringItems = new ObservableCollection<SimpleStringModel>(SimpleStringItems);
+                        SimpleStringItems.Add(simpleStringModel);
+                    }, null);
+                }
+                else
+                {
+                    var res = await _repository.UpdateAsync(simpleString);
+                    if (res)
+                    {
+                        SynchronizationContext.Post(post =>
+                        {
+                            SimpleStringItems = new ObservableCollection<SimpleStringModel>(SimpleStringItems);
+                        }, null);
+                        
+                    }
+                }
+            }
+
         }
     }
 }
