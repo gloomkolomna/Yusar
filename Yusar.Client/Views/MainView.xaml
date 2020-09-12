@@ -33,7 +33,6 @@
                     CommandParameter="{Binding ElementName=grid, Path=SelectedItem}" />
             </DataGrid.InputBindings>
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Id}" Header="Id" />
                 <DataGridTextColumn Binding="{Binding Str, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Header="String" />
             </DataGrid.Columns>
         </DataGrid>
