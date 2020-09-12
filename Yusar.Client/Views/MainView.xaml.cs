@@ -1,4 +1,6 @@
 ﻿using System.Windows.Controls;
+using Yusar.Client.Models;
+using Yusar.Client.ViewModels;
 
 namespace Yusar.Client.Views
 {

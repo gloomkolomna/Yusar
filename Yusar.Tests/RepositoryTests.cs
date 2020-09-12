@@ -24,7 +24,7 @@ namespace Yusar.Tests
         {
             var simpleItem = new SimpleString { Str = $"simple string {_rnd.Next(0, 10)}" };
             var result = _repository.Create(simpleItem);
-            Assert.IsTrue(result);
+            Assert.IsNotNull(result);
         }
 
         [Test, Order(2)]
@@ -61,7 +61,7 @@ namespace Yusar.Tests
         {
             var simpleItem = new SimpleString { Str = $"simple string {_rnd.Next(0, 10)}" };
             var result = await _repository.CreateAsync(simpleItem);
-            Assert.IsTrue(result);
+            Assert.IsNotNull(result);
         }
 
         [Test, Order(7)]

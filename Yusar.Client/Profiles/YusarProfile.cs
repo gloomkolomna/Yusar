@@ -9,6 +9,7 @@ namespace Yusar.Client.Profiles
         public YusarProfile()
         {
             CreateMap<SimpleString, SimpleStringModel>();
+            CreateMap<SimpleStringModel, SimpleString>();
         }
     }
 }

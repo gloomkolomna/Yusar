@@ -1,8 +1,10 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-                    xmlns:converters="clr-namespace:Yusar.Client.Converters">
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:Yusar.Client.Converters">
     <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
     <converters:BoolToInvertedVisibilityConverter x:Key="BoolToInvertedVisibilityConverter" />
     <converters:BoolToInvertedBoolConverter x:Key="BoolToInvertedBoolConverter" />
     <converters:EnumBooleanConverter x:Key="EnumBooleanConverter" />
+    <converters:IgnoreNewItemPlaceholderConverter x:Key="IgnoreKonverter" />
 </ResourceDictionary>

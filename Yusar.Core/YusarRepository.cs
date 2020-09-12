@@ -13,7 +13,7 @@ namespace Yusar.Core
     {
         public string DbFile => Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\yusar.db";
 
-        public bool Create(T item)
+        public T Create(T item)
         {
             using (var db = new LiteDatabase(DbFile))
             {
@@ -22,11 +22,13 @@ namespace Yusar.Core
 
                 if (typeof(T).Name.Equals(nameof(SimpleString)))
                     items.EnsureIndex(x => (x as SimpleString).Str);
-                return true;               
+
+                var retItem = (T)item;
+                return retItem;
             }
         }
 
-        public async Task<bool> CreateAsync(T item)
+        public async Task<T> CreateAsync(T item)
         {
             return await Task.Run(() => Create(item));
         }

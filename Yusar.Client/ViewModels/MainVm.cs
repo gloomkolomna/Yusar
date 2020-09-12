@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Yusar.Client.Models;
 using Yusar.Client.Services;
 using Yusar.Core;
@@ -17,6 +19,8 @@ namespace Yusar.Client.ViewModels
         SynchronizationContext GetContext();
         ObservableCollection<SimpleStringModel> SimpleStringItems { get; set; }
         Task Init();
+        Task AddItem();
+        SimpleStringModel SelectedString { get; set; }
     }
 
     public class MainVm : ObservableObject, IMainVm, ILongOperationNotify
@@ -30,6 +34,8 @@ namespace Yusar.Client.ViewModels
         private string _longOperationText;
         private IBaseVm _selectedView;
         private ObservableCollection<SimpleStringModel> _simpleStringItems;
+        private IAsyncCommand _addItemCommand;
+        private SimpleStringModel _selectedString;
 
         public MainVm(ILongOperationService longOperationService, IDialogService dialogService, IMapper mapper, IYusarRepository<SimpleString> repository)
         {
@@ -131,7 +137,7 @@ namespace Yusar.Client.ViewModels
             SimpleStringItems = new ObservableCollection<SimpleStringModel>();
             var allItems = await _longOperationService.ExecuteAsync(async () =>
             {
-                 return await _repository.GetAllAsync();                
+                return await _repository.GetAllAsync();
             }, "");
 
             foreach (var item in allItems.Result)
@@ -139,6 +145,36 @@ namespace Yusar.Client.ViewModels
                 var mapItem = _mapper.Map<SimpleStringModel>(item);
                 SimpleStringItems.Add(mapItem);
             }
+        }
+
+        public IAsyncCommand AddItemCommand
+        {
+            get
+            {
+                return _addItemCommand ?? (_addItemCommand = new AsyncCommand(async param => await AddItem()));
+            }
+        }
+
+        public SimpleStringModel SelectedString
+        {
+            get => _selectedString;
+            set
+            {
+                _selectedString = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public async Task AddItem()
+        {
+            var simpleString = _mapper.Map<SimpleString>(SelectedString);
+            var retSimpleString = await _repository.CreateAsync(simpleString);
+
+            SynchronizationContext.Post(post =>
+            {
+                SimpleStringItems.Remove(SelectedString);
+                SimpleStringItems.Add(_mapper.Map<SimpleStringModel>(retSimpleString));
+            }, null);
         }
     }
 }

@@ -10,8 +10,8 @@ namespace Yusar.Core
         Task<IEnumerable<T>> GetAllAsync();
         T GetById(int id);
         Task<T> GetByIdAsync(int id);
-        bool Create(T item);
-        Task<bool> CreateAsync(T item);
+        T Create(T item);
+        Task<T> CreateAsync(T item);
         bool Update(T item);
         Task<bool> UpdateAsync(T item);
         bool Delete(int id);
