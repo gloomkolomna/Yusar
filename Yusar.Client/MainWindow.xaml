@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:Yusar.Client" xmlns:controls="clr-namespace:Yusar.Client.Views.Controls" xmlns:view="clr-namespace:Yusar.Client.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <ResourceDictionary Source="Views/Styles.xaml" />
+    </Window.Resources>
     <AdornerDecorator>
         <Border BorderBrush="#FF666666" BorderThickness="0,1,0,0">
             <Grid>

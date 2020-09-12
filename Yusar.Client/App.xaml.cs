@@ -26,7 +26,7 @@ namespace Yusar.Client
             {
                 var mainVm = _dependencyResolver.ServiceProvider.GetService<MainVm>();
                 var mainWindow = _dependencyResolver.ServiceProvider.GetService<MainWindow>();
-
+                mainVm.Init();
                 mainWindow.DataContext = mainVm;
                 mainWindow.Show();
             }

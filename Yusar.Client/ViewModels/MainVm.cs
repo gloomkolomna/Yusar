@@ -1,6 +1,12 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
+using System.Collections.ObjectModel;
 using System.Threading;
+using System.Threading.Tasks;
+using Yusar.Client.Models;
 using Yusar.Client.Services;
+using Yusar.Core;
+using Yusar.Core.Entities;
 
 namespace Yusar.Client.ViewModels
 {
@@ -9,6 +15,8 @@ namespace Yusar.Client.ViewModels
     {
         IBaseVm SelectedView { get; set; }
         SynchronizationContext GetContext();
+        ObservableCollection<SimpleStringModel> SimpleStringItems { get; set; }
+        Task Init();
     }
 
     public class MainVm : ObservableObject, IMainVm, ILongOperationNotify
@@ -16,14 +24,19 @@ namespace Yusar.Client.ViewModels
         private static readonly SynchronizationContext SynchronizationContext = SynchronizationContext.Current;
         private readonly ILongOperationService _longOperationService;
         private readonly IDialogService _dialogService;
+        private readonly IMapper _mapper;
+        private readonly IYusarRepository<SimpleString> _repository;
         private bool _longOperationInProgress;
         private string _longOperationText;
         private IBaseVm _selectedView;
+        private ObservableCollection<SimpleStringModel> _simpleStringItems;
 
-        public MainVm(ILongOperationService longOperationService, IDialogService dialogService)
+        public MainVm(ILongOperationService longOperationService, IDialogService dialogService, IMapper mapper, IYusarRepository<SimpleString> repository)
         {
             _longOperationService = longOperationService;
             _dialogService = dialogService;
+            _mapper = mapper;
+            _repository = repository;
             Subscribe();
         }
 
@@ -52,6 +65,16 @@ namespace Yusar.Client.ViewModels
             set
             {
                 _selectedView = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public ObservableCollection<SimpleStringModel> SimpleStringItems
+        {
+            get => _simpleStringItems;
+            set
+            {
+                _simpleStringItems = value;
                 OnPropertyChanged();
             }
         }
@@ -101,6 +124,21 @@ namespace Yusar.Client.ViewModels
         {
             UnSubscribe();
             SelectedView?.Close();
+        }
+
+        public async Task Init()
+        {
+            SimpleStringItems = new ObservableCollection<SimpleStringModel>();
+            var allItems = await _longOperationService.ExecuteAsync(async () =>
+            {
+                 return await _repository.GetAllAsync();                
+            }, "");
+
+            foreach (var item in allItems.Result)
+            {
+                var mapItem = _mapper.Map<SimpleStringModel>(item);
+                SimpleStringItems.Add(mapItem);
+            }
         }
     }
 }

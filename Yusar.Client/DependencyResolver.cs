@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
+using Yusar.Client.Services;
 using Yusar.Client.ViewModels;
 using Yusar.Core;
 using Yusar.Core.Entities;
@@ -26,6 +27,8 @@ namespace Yusar.Client
             //services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddScoped<IYusarRepository<SimpleString>, YusarRepository<SimpleString>>();
+            services.AddSingleton<ILongOperationService, LongOperationService>();
+            services.AddSingleton<IDialogService, DialogService>();
         }
     }
 }
